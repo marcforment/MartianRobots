@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots", "MartianRobots\MartianRobots.csproj", "{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianRobots.Entities", "Entities\MartianRobots.Entities.csproj", "{A208FBC7-6A2D-4784-BA71-8CAA0C83E378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Core", "MartianRobots.Core\MartianRobots.Core.csproj", "{150300AB-E2B4-4744-A193-7F8E029A67F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianRobots.Core", "MartianRobots.Core\MartianRobots.Core.csproj", "{150300AB-E2B4-4744-A193-7F8E029A67F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Tests", "MartianRobots.Tests\MartianRobots.Tests.csproj", "{1BE18C83-DDBC-4260-A273-5E68A5685DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianRobots.Tests", "MartianRobots.Tests\MartianRobots.Tests.csproj", "{1BE18C83-DDBC-4260-A273-5E68A5685DC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianRobots.Infrastructure", "MartianRobots.Infrastructure\MartianRobots.Infrastructure.csproj", "{C82EDA16-4291-47D2-91E2-4453AD64ADBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A208FBC7-6A2D-4784-BA71-8CAA0C83E378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A208FBC7-6A2D-4784-BA71-8CAA0C83E378}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A208FBC7-6A2D-4784-BA71-8CAA0C83E378}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A208FBC7-6A2D-4784-BA71-8CAA0C83E378}.Release|Any CPU.Build.0 = Release|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{1BE18C83-DDBC-4260-A273-5E68A5685DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BE18C83-DDBC-4260-A273-5E68A5685DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BE18C83-DDBC-4260-A273-5E68A5685DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

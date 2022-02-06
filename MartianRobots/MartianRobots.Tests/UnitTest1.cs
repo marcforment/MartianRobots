@@ -1,3 +1,4 @@
+using MartianRobots.Core;
 using NUnit.Framework;
 
 namespace MartianRobots.Tests
@@ -12,7 +13,7 @@ namespace MartianRobots.Tests
         [Test]
         public void Test1()
         {
-
+          
             Assert.Pass();
         }
     }

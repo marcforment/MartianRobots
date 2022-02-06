@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MartianRobots.Entities
+﻿namespace MartianRobots.Core.Entities
 {
     public class World
     {
@@ -17,7 +11,7 @@ namespace MartianRobots.Entities
             Smells = new List<Coordinate>();
         }
 
-        public bool isOutside(Position position)
+        public bool IsOutside(Position position)
         {
             return position.Coordinate.X > Edge.X || position.Coordinate.Y > Edge.Y;
         }

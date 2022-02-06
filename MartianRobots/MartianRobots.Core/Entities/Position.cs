@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MartianRobots.Entities
+﻿namespace MartianRobots.Core.Entities
 {
     public class Position
     {
@@ -17,9 +11,8 @@ namespace MartianRobots.Entities
             Orientation = orientation;
         }
 
-        public Position executeInstruction(Instruction instruction, List<Coordinate> smells)
+        public Position executeInstruction(Instruction instruction)
         {
-            var initialPosition = Coordinate;
             switch (instruction)
             {
                 case Instruction.Left:
@@ -55,7 +48,7 @@ namespace MartianRobots.Entities
                 case Orientation.East:
                     return new Position(new Coordinate(Coordinate), Orientation.South);
                 case Orientation.South:
-                    return new Position(new Coordinate(Coordinate), Orientation.East);
+                    return new Position(new Coordinate(Coordinate), Orientation.West);
                 default:
                     return new Position(new Coordinate(Coordinate), Orientation.North);
             }
@@ -66,13 +59,13 @@ namespace MartianRobots.Entities
             switch (Orientation)
             {
                 case Orientation.North:
-                    return new Position(new Coordinate(Coordinate.X, Coordinate.Y++), Orientation);
+                    return new Position(new Coordinate(Coordinate.X, Coordinate.Y+1), Orientation);
                 case Orientation.East:
-                    return new Position(new Coordinate(Coordinate.X++, Coordinate.Y), Orientation);
+                    return new Position(new Coordinate(Coordinate.X+1, Coordinate.Y), Orientation);
                 case Orientation.South:
-                    return new Position(new Coordinate(Coordinate.X, Coordinate.Y--), Orientation);
+                    return new Position(new Coordinate(Coordinate.X, Coordinate.Y-1), Orientation);
                 default:
-                    return new Position(new Coordinate(Coordinate.X--, Coordinate.Y), Orientation);
+                    return new Position(new Coordinate(Coordinate.X-1, Coordinate.Y), Orientation);
             }
         }
 

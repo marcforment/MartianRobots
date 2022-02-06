@@ -1,4 +1,4 @@
-﻿namespace MartianRobots.Entities
+﻿namespace MartianRobots.Core.Entities
 {
     public class Robot
     {
