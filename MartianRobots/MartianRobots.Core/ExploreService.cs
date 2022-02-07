@@ -11,13 +11,13 @@ namespace MartianRobots.Core
         {
             _topScoreService = topScoreService;
         }
-        public string ExploreWorld(World world, List<Robot> robots)
+        public string ExploreWorld(ExploreRequest exploreRequest)
         {
-            foreach (Robot robot in robots)
+            foreach (Robot robot in exploreRequest.Robots)
             {
-               ExecuteRobotInstructions(world, robot);
+               ExecuteRobotInstructions(exploreRequest.World, robot);
             }
-            return BuildResultString(robots);
+            return BuildResultString(exploreRequest.Robots);
         }
 
         private void ExecuteRobotInstructions(World world, Robot robot)
@@ -43,9 +43,14 @@ namespace MartianRobots.Core
         private string BuildResultString(List<Robot> robots)
         {
             var sb = new StringBuilder();
-            foreach (Robot robot in robots)
+            for (int i = 0; i < robots.Count; i++)
             {
-                sb.AppendLine(robot.ResultString());
+                var robot = robots[i];
+                sb.Append(robot.ResultString());
+                if(i < robots.Count - 1)
+                {
+                    sb.Append("\n");
+                }
             }
             return sb.ToString();
         }

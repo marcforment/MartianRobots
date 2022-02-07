@@ -1,7 +1,7 @@
 ﻿using MartianRobots.Core.Entities;
 using System.Text.RegularExpressions;
 
-namespace MartianRobots.Contract.V1
+namespace MartianRobots.Web.Contract.V1
 {
     public class TranslatorV1
     {
@@ -109,6 +109,10 @@ namespace MartianRobots.Contract.V1
 
         private static (List<Instruction>? instruction, string error) ParseInstructions(string instructionsString)
         {
+            if(instructionsString.Length >= 100)
+            {
+                return (null, "Instruction strings need to be leess than 100 characters in length");
+            }
             var instructions = new List<Instruction>();
             var instructionChars = instructionsString.ToCharArray();
             foreach(var instructionChar in instructionChars)

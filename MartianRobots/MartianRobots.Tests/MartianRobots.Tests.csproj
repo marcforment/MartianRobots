@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MartianRobots.Core\MartianRobots.Core.csproj" />
+    <ProjectReference Include="..\MartianRobots.Web\MartianRobots.Web.csproj" />
   </ItemGroup>
 
 </Project>

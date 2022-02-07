@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots", "MartianRobots\MartianRobots.csproj", "{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Core", "MartianRobots.Core\MartianRobots.Core.csproj", "{150300AB-E2B4-4744-A193-7F8E029A67F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Tests", "MartianRobots.Tests\MartianRobots.Tests.csproj", "{1BE18C83-DDBC-4260-A273-5E68A5685DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianRobots.Infrastructure", "MartianRobots.Infrastructure\MartianRobots.Infrastructure.csproj", "{C82EDA16-4291-47D2-91E2-4453AD64ADBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Infrastructure", "MartianRobots.Infrastructure\MartianRobots.Infrastructure.csproj", "{C82EDA16-4291-47D2-91E2-4453AD64ADBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MartianRobots.Web", "MartianRobots.Web\MartianRobots.Web.csproj", "{486E1937-2D56-4D6A-A4F3-50C481ACED39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABDB66F9-AF10-44F6-BB22-92B457AD9D44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150300AB-E2B4-4744-A193-7F8E029A67F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C82EDA16-4291-47D2-91E2-4453AD64ADBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486E1937-2D56-4D6A-A4F3-50C481ACED39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486E1937-2D56-4D6A-A4F3-50C481ACED39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486E1937-2D56-4D6A-A4F3-50C481ACED39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486E1937-2D56-4D6A-A4F3-50C481ACED39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

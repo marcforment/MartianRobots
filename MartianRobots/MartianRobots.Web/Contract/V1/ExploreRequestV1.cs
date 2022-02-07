@@ -1,4 +1,4 @@
-﻿namespace MartianRobots.Contract.V1
+﻿namespace MartianRobots.Web.Contract.V1
 {
     public class ExploreRequestV1
     {
