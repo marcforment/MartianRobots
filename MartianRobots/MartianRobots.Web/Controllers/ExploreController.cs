@@ -17,7 +17,22 @@ namespace MartianRobots.Web.Controllers
         {
             _exploreService = exploreService;
         }
-        // GET: api/<ValuesController>
+
+        [HttpPost]
+        public IActionResult Post([FromBody] ExploreRequestV1 requestV1)
+        {
+            var (coreRequest, error) = TranslatorV1.TranslateToCoreRequest(requestV1);
+            if(coreRequest != null)
+            {
+                var result = _exploreService.ExploreWorld(coreRequest);
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(new ErrorResponseV1(error));
+            }
+        }
+
         [HttpGet]
         public string Get()
         {
@@ -68,23 +83,8 @@ namespace MartianRobots.Web.Controllers
                     Instruction.Left
                 }
             );
-            return _exploreService.ExploreWorld(new ExploreRequest(world, new List<Robot> { robot1, robot2, robot3 }));
-        }
-
-        // POST api/<ValuesController>
-        [HttpPost]
-        public IActionResult Post([FromBody] ExploreRequestV1 requestV1)
-        {
-            var (coreRequest, error) = TranslatorV1.TranslateToCoreRequest(requestV1);
-            if(coreRequest != null)
-            {
-                var result = _exploreService.ExploreWorld(coreRequest);
-                return Ok(result);
-            }
-            else
-            {
-                return BadRequest(new ErrorResponseV1(error));
-            }
+            //return _exploreService.ExploreWorld(new ExploreRequest(world, new List<Robot> { robot1, robot2, robot3 })).Result;
+            return "Martian Robots Version 1.0";
         }
     }
 }

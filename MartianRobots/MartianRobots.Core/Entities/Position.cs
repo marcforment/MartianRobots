@@ -73,5 +73,10 @@
         {
             return $"{Coordinate.X} {Coordinate.Y} {Orientation.ResultString()}";
         }
+
+        public int ScoreEntry()
+        {
+            return (this.Coordinate.X * 10) + this.Coordinate.Y;
+        }
     }
 }

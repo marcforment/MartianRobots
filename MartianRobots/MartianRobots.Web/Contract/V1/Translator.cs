@@ -7,11 +7,11 @@ namespace MartianRobots.Web.Contract.V1
     {
         public static (ExploreRequest? result, string error) TranslateToCoreRequest(ExploreRequestV1 requestV1)
         {
-            var lines = Regex.Split(requestV1.Input, "\r\n|\r|\n");
-            if (lines == null || lines.Length == 0)
+            if(requestV1.Input == null || requestV1.Input.Length == 0)
             {
                 return (null, "Input field cannot be empty.");
             }
+            var lines = Regex.Split(requestV1.Input, "\r\n|\r|\n");
 
             if (lines.Length == 1 || lines.Length % 2 == 0)
             {
@@ -72,7 +72,7 @@ namespace MartianRobots.Web.Contract.V1
             }
             else if(coordinate.X > world.Edge.X || coordinate.Y > world.Edge.Y)
             {
-                return (null, $"Robot position {coordinate.X} {coordinate.Y} needs to be inside bonduary {world.Edge.X} {world.Edge.Y}");
+                return (null, $"Robot position {coordinate.X} {coordinate.Y} needs to be inside bonduary {world.Edge.X} {world.Edge.Y}.");
             }
 
             var (orientation, orientetionError) = OrientationExtensions.ParseOrientation(positionStrings[2]);
@@ -96,12 +96,12 @@ namespace MartianRobots.Web.Contract.V1
             }
             catch (Exception e)
             {
-                return (null, $"There was a problem parsing cooordinates: {xString} {yString}");
+                return (null, $"There was a problem parsing cooordinates: {xString} {yString}.");
             }
 
             if (x < 0 || y < 0 || x > 50 || y > 50)
             {
-                return (null, $"Coordinates: {xString} {yString} need to be positive and less than or equal than 50");
+                return (null, $"Coordinates: {xString} {yString} need to be positive and less than or equal than 50.");
             }
 
             return (new Coordinate(x, y), "");
@@ -111,7 +111,7 @@ namespace MartianRobots.Web.Contract.V1
         {
             if(instructionsString.Length >= 100)
             {
-                return (null, "Instruction strings need to be leess than 100 characters in length");
+                return (null, "Instruction strings need to be less than 100 characters in length.");
             }
             var instructions = new List<Instruction>();
             var instructionChars = instructionsString.ToCharArray();

@@ -4,6 +4,6 @@ namespace MartianRobots.Core
 {
     public interface IExploreService
     {
-        public string ExploreWorld(ExploreRequest exploreRequest);
+        public ExploreResponse ExploreWorld(ExploreRequest exploreRequest);
     }
 }

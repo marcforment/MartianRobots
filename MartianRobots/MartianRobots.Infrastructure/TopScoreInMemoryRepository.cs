@@ -10,13 +10,18 @@ namespace MartianRobots.Infrastructure
             scores = new List<int>();
         }
 
-        public void SaveScore(int value)
+        public int SaveScore(int value)
         {
             scores.Add(value);
+            return value;
         }
 
         public int GetTopScore()
         {
+            if(scores.Count == 0)
+            {
+                return 0;
+            }
             return scores.Max();
         }
     }
