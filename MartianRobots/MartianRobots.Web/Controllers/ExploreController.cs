@@ -25,7 +25,9 @@ namespace MartianRobots.Web.Controllers
             if(coreRequest != null)
             {
                 var result = _exploreService.ExploreWorld(coreRequest);
-                return Ok(result);
+                var responseV1 = TranslatorV1.TranslateToV1Response(result);
+
+                return Ok(responseV1);
             }
             else
             {
@@ -36,54 +38,6 @@ namespace MartianRobots.Web.Controllers
         [HttpGet]
         public string Get()
         {
-            var world = new World(new Coordinate(5, 3));
-            var robot1 = new Robot(
-                new Position(new Coordinate(1, 1), Orientation.East),
-                new List<Instruction> {
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Forward
-                }
-            );
-            var robot2 = new Robot(
-                new Position(new Coordinate(3, 2), Orientation.North),
-                new List<Instruction> {
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Left,
-                    Instruction.Left,
-                    Instruction.Forward,
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Left,
-                    Instruction.Left
-                }
-            );
-            var robot3 = new Robot(
-                new Position(new Coordinate(0, 3), Orientation.West),
-                new List<Instruction> {
-                    Instruction.Left,
-                    Instruction.Left,
-                    Instruction.Forward,
-                    Instruction.Forward,
-                    Instruction.Forward,
-                    Instruction.Right,
-                    Instruction.Forward,
-                    Instruction.Left,
-                    Instruction.Forward,
-                    Instruction.Left
-                }
-            );
-            //return _exploreService.ExploreWorld(new ExploreRequest(world, new List<Robot> { robot1, robot2, robot3 })).Result;
             return "Martian Robots Version 1.0";
         }
     }

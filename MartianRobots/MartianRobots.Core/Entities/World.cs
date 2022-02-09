@@ -13,7 +13,7 @@
 
         public bool IsOutside(Position position)
         {
-            return position.Coordinate.X > Edge.X || position.Coordinate.Y > Edge.Y;
+            return position.Coordinate.X > Edge.X || position.Coordinate.Y > Edge.Y || position.Coordinate.X < 0 || position.Coordinate.Y < 0;
         }
     }
 }

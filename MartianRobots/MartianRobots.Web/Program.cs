@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddScoped<IExploreService, ExploreService>();
-builder.Services.AddSingleton<ITopScoreRepository, TopScoreInMemoryRepository>();
+builder.Services.AddSingleton<ITopScoreRepository, TopScoreRepositoryInMemory>();
 
 builder.Services.AddControllers();
 

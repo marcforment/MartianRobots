@@ -2,18 +2,17 @@
 
 namespace MartianRobots.Infrastructure
 {
-    public class TopScoreInMemoryRepository : ITopScoreRepository
+    public class TopScoreRepositoryInMemory : ITopScoreRepository
     {
         private List<int> scores { get; set; }
-        public TopScoreInMemoryRepository()
+        public TopScoreRepositoryInMemory()
         {
             scores = new List<int>();
         }
 
-        public int SaveScore(int value)
+        public void SaveScore(int value)
         {
             scores.Add(value);
-            return value;
         }
 
         public int GetTopScore()

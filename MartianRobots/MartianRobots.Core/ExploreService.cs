@@ -21,7 +21,7 @@ namespace MartianRobots.Core
             }
             var previousTopScore = _topScoreService.GetTopScore();
             var savedScore = CalculateAndSaveScore();
-            return new ExploreResponse(BuildResultString(exploreRequest.Robots), BuildScoreResultString(savedScore, previousTopScore));
+            return new ExploreResponse(BuildResultString(exploreRequest.Robots), savedScore, previousTopScore);
         }
 
         private void ExecuteRobotInstructions(World world, Robot robot)
@@ -32,7 +32,7 @@ namespace MartianRobots.Core
                 var newPosition = robot.Position.executeInstruction(instruction);
                 if (world.IsOutside(newPosition))
                 {
-                    if (!world.Smells.Contains(newPosition.Coordinate))
+                    if (!world.Smells.Any(c => c.X == robot.Position.Coordinate.X && c.Y == robot.Position.Coordinate.Y))
                     {
                         robot.IsLost = true;
                         world.Smells.Add(robot.Position.Coordinate);
@@ -54,7 +54,9 @@ namespace MartianRobots.Core
         {
             var score = CalculateScore();
 
-            return _topScoreService.SaveScore(score);
+            _topScoreService.SaveScore(score);
+
+            return score;
         }
 
         private int CalculateScore()
@@ -85,22 +87,6 @@ namespace MartianRobots.Core
                 }
             }
             return sb.ToString();
-        }
-
-        private string BuildScoreResultString(int score, int previousTopScore)
-        {
-            if(score == previousTopScore)
-            {
-                return $"You tied the best score with a value of {score}.";
-            }
-            else if(score > previousTopScore)
-            {
-                return $"You got the best score yet! With a value of {score}. Previous top score: {previousTopScore}.";
-            }
-            else
-            {
-                return $"Your score ({score}) did not surpass exceed the top score ({previousTopScore}).";
-            }
         }
     }
 }

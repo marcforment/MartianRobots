@@ -46,6 +46,10 @@ namespace MartianRobots.Web.Contract.V1
             return (new ExploreRequest(world, robots), "");
         }
 
+        public static ExploreResponseV1 TranslateToV1Response(ExploreResponse coreResponse)
+        {
+            return new ExploreResponseV1(coreResponse.Result, coreResponse.ScoreResult, coreResponse.PreviousTopScore);
+        }
         private static (World? world, string error) ParseWorld(string worldLine)
         {
             var numberStrings = worldLine.Trim().Split(" ");

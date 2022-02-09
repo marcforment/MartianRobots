@@ -2,7 +2,7 @@
 {
     public interface ITopScoreRepository
     {
-        public int SaveScore(int value);
+        public void SaveScore(int value);
         public int GetTopScore();
     }
 }
