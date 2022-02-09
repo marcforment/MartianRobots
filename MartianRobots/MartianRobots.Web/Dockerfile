@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MartianRobots/MartianRobots.csproj", "MartianRobots/"]
-RUN dotnet restore "MartianRobots/MartianRobots.csproj"
+
+RUN dotnet restore "MartianRobots.Web.csproj"
 COPY . .
-WORKDIR "/src/MartianRobots"
-RUN dotnet build "MartianRobots.csproj" -c Release -o /app/build
+WORKDIR "/src/MartianRobots.Web"
+RUN dotnet build "MartianRobots.Web.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "MartianRobots.csproj" -c Release -o /app/publish
+RUN dotnet publish "MartianRobots.Web.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MartianRobots.dll"]
+ENTRYPOINT ["dotnet", "MartianRobots.Web.dll"]
