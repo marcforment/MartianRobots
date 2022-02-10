@@ -4,7 +4,7 @@ The code challege has been implemented as a Dockerized .NET CORE API
 ## Table of contents
 1. [Additional functionality](#Additional-functionality)
 2. [How to run the solution](#How-to-run-the-solution)
-3. [Example requests](#Example-requests)
+3. [Example requests](#Example-request)
 
 ## Additional functionality <a name="Additional-functionality"></a>
 In addition to the mimum required fuctionality a exploration score feature has been added that determines the quality of the exploration operation made by the robots. Given an input each explored coordinate on Mars adds 1 point and visiting an already explored coordinate subtracts one point from the final score. Here are two examples:
