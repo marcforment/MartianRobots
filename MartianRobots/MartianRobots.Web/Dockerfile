@@ -7,8 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-
-RUN dotnet restore "MartianRobots.Web.csproj"
+COPY ["MartianRobots.Web/MartianRobots.Web.csproj", "MartianRobots.Web/"]
+RUN dotnet restore "MartianRobots.Web/MartianRobots.Web.csproj"
 COPY . .
 WORKDIR "/src/MartianRobots.Web"
 RUN dotnet build "MartianRobots.Web.csproj" -c Release -o /app/build
