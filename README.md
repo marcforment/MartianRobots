@@ -7,7 +7,7 @@ The code challege has been implemented as a Dockerized .NET CORE API
 3. [Example requests](#Example-request)
 
 ## Additional functionality <a name="Additional-functionality"></a>
-In addition to the mimum required fuctionality a exploration score feature has been added that determines the quality of the exploration operation made by the robots. Given an input each explored coordinate on Mars adds 1 point and visiting an already explored coordinate subtracts one point from the final score. Here are two examples:
+In addition to the minimum required fuctionality an exploration score feature has been added that determines the quality of the exploration operation made by the robots. Given an input each explored coordinate on Mars adds 1 point. Visiting an already explored coordinate subtracts one point from the final score. Here are two examples:
 
 - Robots visit (1,0), (1,1) and (2,3):
     - (1,0) 1 point
@@ -21,7 +21,7 @@ In addition to the mimum required fuctionality a exploration score feature has b
     - (1,0) -1 point
         - Total: 1 points
 
-Scores for each execution are stored in memory ad the previous top score is returned on the response.
+Scores for each execution are stored in memory and the previous top score is returned on the response.
 
 ## How to run the solution <a name="How-to-run-the-solution"></a>
 To run the solution go to MartianRobots/MartianRobots.Web and execute:
